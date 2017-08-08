@@ -10,12 +10,12 @@
 		523AA7E51F33254800B23784 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AA7E41F33254800B23784 /* TabBarViewController.swift */; };
 		523AA7E71F332D5F00B23784 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AA7E61F332D5F00B23784 /* Convenience.swift */; };
 		523AA7E91F34054E00B23784 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AA7E81F34054E00B23784 /* UIExtensions.swift */; };
+		525EA7AC1F39CB7000AD3033 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA7AB1F39CB7000AD3033 /* StudentData.swift */; };
 		5274721C1F375C4A00874F5E /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274721B1F375C4A00874F5E /* Indicator.swift */; };
 		5274721E1F37E2DB00874F5E /* LocationSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274721D1F37E2DB00874F5E /* LocationSenderViewController.swift */; };
 		527472201F3877DA00874F5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274721F1F3877DA00874F5E /* User.swift */; };
 		527472221F38854600874F5E /* ShowPinMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527472211F38854600874F5E /* ShowPinMapViewController.swift */; };
 		527BBE481F242D0D00FC7844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BBE471F242D0D00FC7844 /* AppDelegate.swift */; };
-		527BBE4A1F242D0D00FC7844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BBE491F242D0D00FC7844 /* ViewController.swift */; };
 		527BBE4D1F242D0D00FC7844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527BBE4B1F242D0D00FC7844 /* Main.storyboard */; };
 		527BBE4F1F242D0D00FC7844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527BBE4E1F242D0D00FC7844 /* Assets.xcassets */; };
 		527BBE521F242D0D00FC7844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527BBE501F242D0D00FC7844 /* LaunchScreen.storyboard */; };
@@ -34,13 +34,13 @@
 		523AA7E41F33254800B23784 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		523AA7E61F332D5F00B23784 /* Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		523AA7E81F34054E00B23784 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = Controller/UIExtensions.swift; sourceTree = "<group>"; };
+		525EA7AB1F39CB7000AD3033 /* StudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		5274721B1F375C4A00874F5E /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = View/Indicator.swift; sourceTree = "<group>"; };
 		5274721D1F37E2DB00874F5E /* LocationSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSenderViewController.swift; sourceTree = "<group>"; };
 		5274721F1F3877DA00874F5E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		527472211F38854600874F5E /* ShowPinMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPinMapViewController.swift; sourceTree = "<group>"; };
 		527BBE441F242D0D00FC7844 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527BBE471F242D0D00FC7844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		527BBE491F242D0D00FC7844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		527BBE4C1F242D0D00FC7844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		527BBE4E1F242D0D00FC7844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527BBE511F242D0D00FC7844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,7 +110,6 @@
 		52F8E9991F2E276B00849280 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				527BBE491F242D0D00FC7844 /* ViewController.swift */,
 				52F8E99A1F2E278900849280 /* LoginViewController.swift */,
 				52F8E9A41F2E37DD00849280 /* TableViewController.swift */,
 				52A5764C1F32020A00796560 /* MapViewController.swift */,
@@ -130,6 +129,7 @@
 				52A576481F30B7A200796560 /* AuthClient.swift */,
 				523AA7E61F332D5F00B23784 /* Convenience.swift */,
 				52F8E99E1F2E292A00849280 /* Student.swift */,
+				525EA7AB1F39CB7000AD3033 /* StudentData.swift */,
 				5274721F1F3877DA00874F5E /* User.swift */,
 			);
 			name = Model;
@@ -254,10 +254,10 @@
 				52F8E99B1F2E278900849280 /* LoginViewController.swift in Sources */,
 				52A576491F30B7A200796560 /* AuthClient.swift in Sources */,
 				5274721E1F37E2DB00874F5E /* LocationSenderViewController.swift in Sources */,
-				527BBE4A1F242D0D00FC7844 /* ViewController.swift in Sources */,
 				527472201F3877DA00874F5E /* User.swift in Sources */,
 				527BBE481F242D0D00FC7844 /* AppDelegate.swift in Sources */,
 				52F8E99F1F2E292A00849280 /* Student.swift in Sources */,
+				525EA7AC1F39CB7000AD3033 /* StudentData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

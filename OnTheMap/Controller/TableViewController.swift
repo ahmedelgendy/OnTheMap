@@ -25,7 +25,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let student = Client.students[(indexPath as IndexPath).row]
+        let student = StudentData.shared.students[(indexPath as IndexPath).row]
         let cellReuseIdentifier = "TableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         cell?.textLabel?.text = student.firstName + " " + student.lastName
@@ -36,7 +36,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let student = Client.students[(indexPath as IndexPath).row]
+        let student = StudentData.shared.students[(indexPath as IndexPath).row]
 
         Client.shared().openURL(student.mediaURL){
             (success) in
@@ -45,9 +45,10 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource{
                 self.presentAlert(title: "Error", message: "Cant open URL", actionTitle: "cancel")
             }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Client.students.count
+        return StudentData.shared.students.count
     }
 }

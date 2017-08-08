@@ -44,7 +44,7 @@ class LocationSenderViewController: UIViewController, MKMapViewDelegate {
         
         localSearch.start(completionHandler:{
             (response, error) in
-            print(response!)
+
             if error == nil {
                 let coordinates = response?.mapItems.first?.placemark.coordinate
                 let locationString = response?.mapItems.first?.placemark.title

@@ -17,26 +17,29 @@ struct Student {
     let mediaURL:String
     let latitude:Double
     let longitude:Double
-    let createdAt:AnyObject!
-    let updatedAt:AnyObject!
+    let createdAt:String!
+    let updatedAt:String!
     //var ACL:Acl
     
+   // static var students = [Student]()
+
+    
     init(dictionary : [String:AnyObject]) {
-        objectId = dictionary[Client.ResponseKeys.objectId] as! String
-        uniqueKey = dictionary[Client.ResponseKeys.uniqueKey] as! String
-        firstName = dictionary[Client.ResponseKeys.firstName] as! String
-        lastName = dictionary[Client.ResponseKeys.lastName] as! String
-        mapString = dictionary[Client.ResponseKeys.mapString] as! String
-        mediaURL = dictionary[Client.ResponseKeys.mediaURL] as! String
-        latitude = dictionary[Client.ResponseKeys.latitude] as! Double
-        longitude = dictionary[Client.ResponseKeys.longitude] as! Double
-        createdAt = dictionary[Client.ResponseKeys.createdAt] as AnyObject
-        updatedAt = dictionary[Client.ResponseKeys.updatedAt] as AnyObject
+        objectId = dictionary[Client.ResponseKeys.objectId] as? String ?? ""
+        uniqueKey = dictionary[Client.ResponseKeys.uniqueKey] as? String ?? ""
+        firstName = dictionary[Client.ResponseKeys.firstName] as? String ?? ""
+        lastName = dictionary[Client.ResponseKeys.lastName] as? String ?? ""
+        mapString = dictionary[Client.ResponseKeys.mapString] as? String ?? ""
+        mediaURL = dictionary[Client.ResponseKeys.mediaURL] as? String ?? ""
+        latitude = dictionary[Client.ResponseKeys.latitude] as? Double ?? 0.0
+        longitude = dictionary[Client.ResponseKeys.longitude] as? Double ?? 0.0
+        createdAt = dictionary[Client.ResponseKeys.createdAt] as? String ?? ""
+        updatedAt = dictionary[Client.ResponseKeys.updatedAt] as? String ?? ""
     }
     
     static func studentsFromResult(_ result: [[String:AnyObject]]){
         for item in result{
-            Client.students.append(Student(dictionary: item))
+            StudentData.shared.students.append(Student(dictionary: item))
         }
     }
     

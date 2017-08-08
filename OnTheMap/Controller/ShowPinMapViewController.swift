@@ -24,16 +24,17 @@ class ShowPinMapViewController: UIViewController {
     @IBAction func sendLocation(){
         Client().getUserData(completion: {
             (result, error) in
-            if result!{
+            if error == nil{
                 Client().postStudentLocation(completion: {
                   (success, error) in
                     if success{
-                        let tabsNavigation = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVCNav")
-                        self.present(tabsNavigation!, animated: false)
+                        self.dismiss(animated: true, completion: nil)
                     }else{
                         self.presentAlert(title: "Add Location", message: "Error with your location", actionTitle: "ok")
                     }
                 })
+            }else{
+                self.presentAlert(title: "Add Location Error", message: "Could not add location", actionTitle: "Ok")
             }
         })
     }

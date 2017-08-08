@@ -96,7 +96,7 @@ extension TabBarViewController{
         
         let alertActionOverrite = UIAlertAction(title: "overriten", style: alertActionStyle, handler: {
             (alert: UIAlertAction!) in
-            
+            self.navToSendLocation()
         })
         
         alertView.addAction(alertActionOK)

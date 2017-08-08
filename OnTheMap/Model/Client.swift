@@ -12,10 +12,9 @@ class Client: NSObject {
     
     // shared session
     var session = URLSession.shared
-    
-    static var students = [Student]()
     static var objectId : String!
     static var isLocationPosted: Bool! = false
+    
     override init() {
         super.init()
     }
@@ -134,18 +133,20 @@ class Client: NSObject {
         return components.url!
     }
     
-    func openURL(_ urlString:String, completion: @escaping (_ success:Bool?) -> Void){
-        let url = URL(string: urlString)
-        
-        guard UIApplication.shared.canOpenURL(url!) else {
+    func openURL(_ urlString:String?, completion: @escaping (_ success:Bool?) -> Void){
+        guard urlString != "" else{
             completion(false)
             return
         }
-        UIApplication.shared.open(url!, options: [:], completionHandler:{
-            (success) in
+        let url = URL(string: urlString!)
+        if UIApplication.shared.canOpenURL(url!){
+            UIApplication.shared.open(url!, options: [:], completionHandler:{
+                (success) in
                 completion(success)
-        })
-        
+            })
+        }else{
+            completion(false)
+        }
     }
 
     // MARK: Shared Instance

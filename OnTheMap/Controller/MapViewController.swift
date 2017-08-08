@@ -9,14 +9,32 @@
 import Foundation
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
-    
+class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeAnnotations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Client.shared().getStudents(){
+            (result, error) in
+            
+            if error != nil{
+                performUIUpdatesOnMain {
+                    self.presentAlert(title: "Data Error", message: "Can not getting data", actionTitle: "Ok")
+                }
+            }else{
+                performUIUpdatesOnMain {
+                    self.makeAnnotations()
+                }
+            }
+        }
+        
+        zoomToUserLocation()
     }
 
     
@@ -26,7 +44,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var annotations = [MKPointAnnotation]()
         
-        for student in Client.students{
+        for student in StudentData.shared.students{
             let lat = CLLocationDegrees(student.latitude)
             let long = CLLocationDegrees(student.longitude)
             
@@ -43,7 +61,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             annotations.append(annotation)
         }
+        
         self.mapView.addAnnotations(annotations)
+    }
+    
+    func zoomToUserLocation(){
+        if !((User.latitude == 0.0) && (User.longitude == 0.0)){
+            let lat = CLLocationDegrees(User.latitude)
+            let long = CLLocationDegrees(User.longitude)
+            
+            let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            
+            // zoom and move to coordinates
+            let region = MKCoordinateRegionMakeWithDistance(coordinates, 3000, 3000)
+            mapView.region = region
+        }
+
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

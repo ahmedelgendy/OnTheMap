@@ -10,7 +10,7 @@ import Foundation
 
 extension Client{
 
-    func getUserData(completion : @escaping (_ success: Bool?, _ errorMessage: String)->Void){
+    func getUserData(completion : @escaping (_ success: Bool?, _ errorMessage: String?)->Void){
 
         let url: URL = URL(string: Constants.GetUserURL + User.uniqueKey)!
         let request = NSMutableURLRequest(url: url)
@@ -40,7 +40,7 @@ extension Client{
                 }
                 User.firstName = firstname
                 User.lastName = lastName
-                completion(true, "")
+                completion(true, nil)
             })
         }
         
