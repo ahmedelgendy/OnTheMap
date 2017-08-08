@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		523AA7E51F33254800B23784 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AA7E41F33254800B23784 /* TabBarViewController.swift */; };
 		523AA7E71F332D5F00B23784 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AA7E61F332D5F00B23784 /* Convenience.swift */; };
-		523AA7E91F34054E00B23784 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AA7E81F34054E00B23784 /* UIExtensions.swift */; };
 		525EA7AC1F39CB7000AD3033 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA7AB1F39CB7000AD3033 /* StudentData.swift */; };
-		5274721C1F375C4A00874F5E /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274721B1F375C4A00874F5E /* Indicator.swift */; };
+		525EA7D01F3A4A3B00AD3033 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA7CE1F3A4A3B00AD3033 /* Indicator.swift */; };
+		525EA7D11F3A4A3B00AD3033 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EA7CF1F3A4A3B00AD3033 /* UIExtensions.swift */; };
 		5274721E1F37E2DB00874F5E /* LocationSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274721D1F37E2DB00874F5E /* LocationSenderViewController.swift */; };
 		527472201F3877DA00874F5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274721F1F3877DA00874F5E /* User.swift */; };
 		527472221F38854600874F5E /* ShowPinMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527472211F38854600874F5E /* ShowPinMapViewController.swift */; };
@@ -33,9 +33,9 @@
 /* Begin PBXFileReference section */
 		523AA7E41F33254800B23784 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		523AA7E61F332D5F00B23784 /* Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
-		523AA7E81F34054E00B23784 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = Controller/UIExtensions.swift; sourceTree = "<group>"; };
 		525EA7AB1F39CB7000AD3033 /* StudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
-		5274721B1F375C4A00874F5E /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = View/Indicator.swift; sourceTree = "<group>"; };
+		525EA7CE1F3A4A3B00AD3033 /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		525EA7CF1F3A4A3B00AD3033 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		5274721D1F37E2DB00874F5E /* LocationSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSenderViewController.swift; sourceTree = "<group>"; };
 		5274721F1F3877DA00874F5E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		527472211F38854600874F5E /* ShowPinMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPinMapViewController.swift; sourceTree = "<group>"; };
@@ -117,9 +117,8 @@
 				5274721D1F37E2DB00874F5E /* LocationSenderViewController.swift */,
 				527472211F38854600874F5E /* ShowPinMapViewController.swift */,
 			);
-			name = Controller;
-			path = /CloudSoft/Learning/iOS/OnTheMap/OnTheMap/Controller;
-			sourceTree = "<absolute>";
+			path = Controller;
+			sourceTree = "<group>";
 		};
 		52F8E99C1F2E28AF00849280 /* Model */ = {
 			isa = PBXGroup;
@@ -132,17 +131,16 @@
 				525EA7AB1F39CB7000AD3033 /* StudentData.swift */,
 				5274721F1F3877DA00874F5E /* User.swift */,
 			);
-			name = Model;
-			path = /CloudSoft/Learning/iOS/OnTheMap/OnTheMap/Model;
-			sourceTree = "<absolute>";
+			path = Model;
+			sourceTree = "<group>";
 		};
 		52F8E99D1F2E28B700849280 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				523AA7E81F34054E00B23784 /* UIExtensions.swift */,
-				5274721B1F375C4A00874F5E /* Indicator.swift */,
+				525EA7CE1F3A4A3B00AD3033 /* Indicator.swift */,
+				525EA7CF1F3A4A3B00AD3033 /* UIExtensions.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		52F8E9A01F2E299D00849280 /* Supporting Files */ = {
@@ -241,13 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525EA7D11F3A4A3B00AD3033 /* UIExtensions.swift in Sources */,
 				527472221F38854600874F5E /* ShowPinMapViewController.swift in Sources */,
 				52F8E9A31F2E2BB600849280 /* Constants.swift in Sources */,
-				5274721C1F375C4A00874F5E /* Indicator.swift in Sources */,
 				523AA7E71F332D5F00B23784 /* Convenience.swift in Sources */,
-				523AA7E91F34054E00B23784 /* UIExtensions.swift in Sources */,
 				52F8E9A71F2F3E8800849280 /* Client.swift in Sources */,
 				523AA7E51F33254800B23784 /* TabBarViewController.swift in Sources */,
+				525EA7D01F3A4A3B00AD3033 /* Indicator.swift in Sources */,
 				52F8E9A51F2E37DD00849280 /* TableViewController.swift in Sources */,
 				52A5764D1F32020A00796560 /* MapViewController.swift in Sources */,
 				52A5764F1F32056000796560 /* GCDBlackBox.swift in Sources */,

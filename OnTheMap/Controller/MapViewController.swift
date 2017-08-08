@@ -20,19 +20,19 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Client.shared().getStudents(){
-            (result, error) in
-            
-            if error != nil{
-                performUIUpdatesOnMain {
-                    self.presentAlert(title: "Data Error", message: "Can not getting data", actionTitle: "Ok")
-                }
-            }else{
-                performUIUpdatesOnMain {
-                    self.makeAnnotations()
-                }
-            }
-        }
+//        Client.shared().getStudents(){
+//            (result, error) in
+//            
+//            if error != nil{
+//                performUIUpdatesOnMain {
+//                    self.presentAlert(title: "Data Error", message: "Can not getting data", actionTitle: "Ok")
+//                }
+//            }else{
+//                performUIUpdatesOnMain {
+//                    self.makeAnnotations()
+//                }
+//            }
+//        }
         
         zoomToUserLocation()
     }
